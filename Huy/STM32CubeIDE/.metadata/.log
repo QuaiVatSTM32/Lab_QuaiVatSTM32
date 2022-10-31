@@ -4722,3 +4722,24 @@ java.lang.Exception: Resource '/Lab1_Ex5' does not exist.
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-10-31 10:33:47.568
 !MESSAGE Indexed 'Lab1_Ex6-10' (19 sources, 101 headers) in 1.72 sec: 6,797 declarations; 20,781 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0.68%)
+!SESSION 2022-11-01 01:48:06.672 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-01 01:48:15.788
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-01 01:48:15.876
+!MESSAGE Log4j initialized with config file D:\Documents\Github\Lab1_QuaiVatSTM32\Huy\STM32CubeIDE\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-01 01:48:28.253
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-11-01 01:52:40.129
+!MESSAGE Indexed 'Lab2_Ex1' (19 sources, 78 headers) in 2.02 sec: 3,654 declarations; 13,321 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.012%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-11-01 02:07:21.481
+!MESSAGE Indexed 'Lab2_Ex1' (19 sources, 80 headers) in 2.3 sec: 4,850 declarations; 28,766 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0059%)
