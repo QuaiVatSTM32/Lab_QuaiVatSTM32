@@ -1,0 +1,22 @@
+10:23:59 **** Incremental Build of configuration Release for project Lab1_Ex3 ****
+make -j12 all 
+arm-none-eabi-gcc -o "Lab1_Ex3.elf" @"objects.list"   -mcpu=cortex-m3 -T"G:\Study\HCMUT\Sem6\MCU\Lab\STM32CubeIDE\Lab1_Ex3\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab1_Ex3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Lab1_Ex3.elf
+ 
+arm-none-eabi-size   Lab1_Ex3.elf 
+arm-none-eabi-objdump -h -S  Lab1_Ex3.elf  > "Lab1_Ex3.list"
+arm-none-eabi-objcopy  -O ihex  Lab1_Ex3.elf  "Lab1_Ex3.hex"
+arm-none-eabi-objcopy  -O binary  Lab1_Ex3.elf  "Lab1_Ex3.bin"
+   text	   data	    bss	    dec	    hex	filename
+   3236	     20	   1572	   4828	   12dc	Lab1_Ex3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab1_Ex3.bin
+Finished building: Lab1_Ex3.hex
+Finished building: Lab1_Ex3.list
+ 
+ 
+ 
+
+10:23:59 Build Finished. 0 errors, 0 warnings. (took 344ms)
+

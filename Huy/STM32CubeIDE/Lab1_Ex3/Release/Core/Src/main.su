@@ -1,0 +1,9 @@
+trafic_light1.h:11:6:LED_RED1	8	static
+trafic_light1.h:17:6:LED_YELLOW1	8	static
+trafic_light1.h:23:6:LED_GREEN1	8	static
+trafic_light2.h:11:6:LED_RED2	8	static
+trafic_light2.h:17:6:LED_YELLOW2	8	static
+trafic_light2.h:23:6:LED_GREEN2	8	static
+main.c:127:6:SystemClock_Config	72	static,ignoring_inline_asm
+main.c:65:5:main	32	static
+main.c:201:6:Error_Handler	0	static,ignoring_inline_asm

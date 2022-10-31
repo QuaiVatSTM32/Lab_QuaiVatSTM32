@@ -1,0 +1,5 @@
+display7SEG.h:14:6:Led_Status	16	static
+display7SEG.h:24:6:display7SEG	48	static
+main.c:110:6:SystemClock_Config	72	static,ignoring_inline_asm
+main.c:64:5:main	32	static
+main.c:176:6:Error_Handler	0	static,ignoring_inline_asm

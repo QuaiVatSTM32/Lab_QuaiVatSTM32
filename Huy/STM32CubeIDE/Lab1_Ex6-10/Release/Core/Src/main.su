@@ -1,0 +1,10 @@
+display7SEG1.h:14:6:Led_Status1	16	static
+display7SEG1.h:24:6:display7SEG1	48	static
+display7SEG2.h:11:6:Led_Status2	16	static
+display7SEG2.h:21:6:display7SEG2	48	static
+display7SEG.h:14:6:display7SEG	16	static
+AnalogWatch.h:11:6:displayAnalogWatch	56	static
+AnalogWatch.h:30:6:ClearAllClock	0	static
+main.c:115:6:SystemClock_Config	72	static,ignoring_inline_asm
+main.c:65:5:main	40	static
+main.c:204:6:Error_Handler	0	static,ignoring_inline_asm
