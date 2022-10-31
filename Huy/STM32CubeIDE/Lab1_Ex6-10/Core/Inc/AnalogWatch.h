@@ -8,11 +8,9 @@
 #ifndef INC_ANALOGWATCH_H_
 #define INC_ANALOGWATCH_H_
 
-void displayAnalogWatch(int num){
-	int Array[12];
-	for(int i = 0; i<12; i++) Array[i] = 0;
-	while(num>=12) num-=12;
-	if(num > -1) Array[num] = 1;
+static int Array[12] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+void setClockStatus(){
+	//TODO
 	HAL_GPIO_WritePin ( W0_GPIO_Port, W0_Pin , Array[0]);
 	HAL_GPIO_WritePin ( W1_GPIO_Port, W1_Pin , Array[1]);
 	HAL_GPIO_WritePin ( W2_GPIO_Port, W2_Pin , Array[2]);
@@ -27,9 +25,37 @@ void displayAnalogWatch(int num){
 	HAL_GPIO_WritePin ( W11_GPIO_Port, W11_Pin , Array[11]);
 }
 
-void ClearAllClock(){
-	displayAnalogWatch(-1);
+void clearAllClock(){
+	//TODO
+	for(int i = 0; i<12; i++) Array[i] = 0;
+	setClockStatus();
 }
 
+void setNumberOnClock(int num){
+	//TODO
+	Array[num] = 1;
+	setClockStatus();
+}
+
+void clearNumberOnClock(int num){
+	//TODO
+	Array[num] = 0;
+	setClockStatus();
+}
+
+int setTime(int hr, int min, int sec){
+	clearAllClock();
+	//TODO
+	int hr_state = hr;
+	int min_state = (min - min%5)/5;
+	int sec_state = (sec - sec%5)/5;
+	//For hour
+	setNumberOnClock(hr_state);
+	//For minutes
+	setNumberOnClock(min_state);
+	//For second
+	setNumberOnClock(sec_state);
+	return sec;
+}
 
 #endif /* INC_ANALOGWATCH_H_ */
