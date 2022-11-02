@@ -1,17 +1,18 @@
-15:26:07 **** Incremental Build of configuration Release for project Lab2_Ex2 ****
+21:11:37 **** Incremental Build of configuration Release for project TEST_SOFTWARE_TIMER ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc -o "Lab2_Ex2.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Documents\Github\Lab1_QuaiVatSTM32\Huy\STM32CubeIDE\Lab2_Ex2\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab2_Ex2.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Lab2_Ex2.elf
+arm-none-eabi-gcc "../Core/Src/software_timer.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/software_timer.d" -MT"Core/Src/software_timer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/software_timer.o"
+arm-none-eabi-gcc -o "TEST_SOFTWARE_TIMER.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Documents\Github\Lab1_QuaiVatSTM32\Huy\STM32CubeIDE\TEST_SOFTWARE_TIMER\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST_SOFTWARE_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST_SOFTWARE_TIMER.elf
  
-arm-none-eabi-size   Lab2_Ex2.elf 
-arm-none-eabi-objdump -h -S  Lab2_Ex2.elf  > "Lab2_Ex2.list"
-arm-none-eabi-objcopy  -O ihex  Lab2_Ex2.elf  "Lab2_Ex2.hex"
+arm-none-eabi-size   TEST_SOFTWARE_TIMER.elf 
+arm-none-eabi-objdump -h -S  TEST_SOFTWARE_TIMER.elf  > "TEST_SOFTWARE_TIMER.list"
+arm-none-eabi-objcopy  -O ihex  TEST_SOFTWARE_TIMER.elf  "TEST_SOFTWARE_TIMER.hex"
    text	   data	    bss	    dec	    hex	filename
-   4784	     28	   1660	   6472	   1948	Lab2_Ex2.elf
+   4164	     20	   1652	   5836	   16cc	TEST_SOFTWARE_TIMER.elf
 Finished building: default.size.stdout
  
-Finished building: Lab2_Ex2.hex
-Finished building: Lab2_Ex2.list
+Finished building: TEST_SOFTWARE_TIMER.hex
+Finished building: TEST_SOFTWARE_TIMER.list
  
  
