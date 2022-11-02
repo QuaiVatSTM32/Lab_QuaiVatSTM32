@@ -1,7 +1,5 @@
-21:11:37 **** Incremental Build of configuration Release for project TEST_SOFTWARE_TIMER ****
+21:28:59 **** Incremental Build of configuration Debug for project TEST_SOFTWARE_TIMER ****
 make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/software_timer.c" -mcpu=cortex-m3 -std=gnu11 -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -Os -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/software_timer.d" -MT"Core/Src/software_timer.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/software_timer.o"
 arm-none-eabi-gcc -o "TEST_SOFTWARE_TIMER.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Documents\Github\Lab1_QuaiVatSTM32\Huy\STM32CubeIDE\TEST_SOFTWARE_TIMER\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST_SOFTWARE_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TEST_SOFTWARE_TIMER.elf
  
@@ -9,7 +7,7 @@ arm-none-eabi-size   TEST_SOFTWARE_TIMER.elf
 arm-none-eabi-objdump -h -S  TEST_SOFTWARE_TIMER.elf  > "TEST_SOFTWARE_TIMER.list"
 arm-none-eabi-objcopy  -O ihex  TEST_SOFTWARE_TIMER.elf  "TEST_SOFTWARE_TIMER.hex"
    text	   data	    bss	    dec	    hex	filename
-   4164	     20	   1652	   5836	   16cc	TEST_SOFTWARE_TIMER.elf
+   7068	     24	   1648	   8740	   2224	TEST_SOFTWARE_TIMER.elf
 Finished building: default.size.stdout
  
 Finished building: TEST_SOFTWARE_TIMER.hex
@@ -17,5 +15,5 @@ Finished building: TEST_SOFTWARE_TIMER.list
  
  
 
-21:11:38 Build Finished. 0 errors, 0 warnings. (took 734ms)
+21:29:00 Build Finished. 0 errors, 0 warnings. (took 553ms)
 

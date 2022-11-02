@@ -52,6 +52,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 TEST_SOFTWARE_TIMER.list \
 
+OBJCOPY_HEX += \
+TEST_SOFTWARE_TIMER.hex \
+
 
 # All Target
 all: main-build
@@ -75,12 +78,17 @@ TEST_SOFTWARE_TIMER.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_D
 	@echo 'Finished building: $@'
 	@echo ' '
 
+TEST_SOFTWARE_TIMER.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "TEST_SOFTWARE_TIMER.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) TEST_SOFTWARE_TIMER.elf TEST_SOFTWARE_TIMER.list TEST_SOFTWARE_TIMER.map default.size.stdout
+	-$(RM) TEST_SOFTWARE_TIMER.elf TEST_SOFTWARE_TIMER.hex TEST_SOFTWARE_TIMER.list TEST_SOFTWARE_TIMER.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
