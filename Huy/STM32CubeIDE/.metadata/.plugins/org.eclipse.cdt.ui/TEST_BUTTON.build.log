@@ -1,0 +1,22 @@
+16:22:47 **** Incremental Build of configuration Release for project TEST_BUTTON ****
+make -j12 all 
+arm-none-eabi-gcc -o "TEST_BUTTON.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Documents\Github\Lab1_QuaiVatSTM32\Huy\STM32CubeIDE\TEST_BUTTON\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST_BUTTON.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TEST_BUTTON.elf
+ 
+arm-none-eabi-size   TEST_BUTTON.elf 
+arm-none-eabi-objdump -h -S  TEST_BUTTON.elf  > "TEST_BUTTON.list"
+arm-none-eabi-objcopy  -O ihex  TEST_BUTTON.elf  "TEST_BUTTON.hex"
+arm-none-eabi-objcopy  -O binary  TEST_BUTTON.elf  "TEST_BUTTON.bin"
+   text	   data	    bss	    dec	    hex	filename
+   4324	     40	   1656	   6020	   1784	TEST_BUTTON.elf
+Finished building: default.size.stdout
+ 
+Finished building: TEST_BUTTON.hex
+Finished building: TEST_BUTTON.bin
+Finished building: TEST_BUTTON.list
+ 
+ 
+ 
+
+16:22:47 Build Finished. 0 errors, 0 warnings. (took 352ms)
+
