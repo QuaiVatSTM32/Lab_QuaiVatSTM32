@@ -21,6 +21,8 @@
 #include "main.h"
 #include "software_timer.h"
 #include "button.h"
+#include "fsm_automatic.h"
+#include "fsm_manual.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -95,9 +97,18 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  status = INIT;
+
   while (1)
   {
     /* USER CODE END WHILE */
+	  if(status == INIT||status == AUTO_RED||status == AUTO_GREEN||status == AUTO_YELLOW){
+		  fsm_automatic_run();
+	  }
+	  else{
+		  fsm_manual_run();
+	  }
+
 
     /* USER CODE BEGIN 3 */
   }
@@ -219,6 +230,7 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
 	timerRun();
 	getKeyInput();
+
 }
 /* USER CODE END 4 */
 
