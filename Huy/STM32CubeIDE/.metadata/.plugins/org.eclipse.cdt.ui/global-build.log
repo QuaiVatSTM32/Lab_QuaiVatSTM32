@@ -1,16 +1,7 @@
-21:28:59 **** Incremental Build of configuration Debug for project TEST_SOFTWARE_TIMER ****
+09:39:10 **** Incremental Build of configuration Debug for project Lab2_Ex3to10 ****
 make -j12 all 
-arm-none-eabi-gcc -o "TEST_SOFTWARE_TIMER.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Documents\Github\Lab1_QuaiVatSTM32\Huy\STM32CubeIDE\TEST_SOFTWARE_TIMER\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST_SOFTWARE_TIMER.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TEST_SOFTWARE_TIMER.elf
- 
-arm-none-eabi-size   TEST_SOFTWARE_TIMER.elf 
-arm-none-eabi-objdump -h -S  TEST_SOFTWARE_TIMER.elf  > "TEST_SOFTWARE_TIMER.list"
-arm-none-eabi-objcopy  -O ihex  TEST_SOFTWARE_TIMER.elf  "TEST_SOFTWARE_TIMER.hex"
+arm-none-eabi-size   Lab2_Ex3to10.elf 
    text	   data	    bss	    dec	    hex	filename
-   7068	     24	   1648	   8740	   2224	TEST_SOFTWARE_TIMER.elf
+   8576	     36	   1660	  10272	   2820	Lab2_Ex3to10.elf
 Finished building: default.size.stdout
- 
-Finished building: TEST_SOFTWARE_TIMER.hex
-Finished building: TEST_SOFTWARE_TIMER.list
- 
  
