@@ -18,7 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "software_timer.h"
+#include "fsm_automatic.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -93,12 +93,11 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer1(200);
+  status = INIT;
   while (1)
   {
     /* USER CODE END WHILE */
-	  HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin,
-			  HAL_GPIO_ReadPin(Button1_GPIO_Port, Button1_Pin));
+	  fsm_automatic_run();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -200,7 +199,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, DOT_Pin|LED_RED_Pin|EN0_Pin|EN1_Pin
+  HAL_GPIO_WritePin(GPIOA, DOT_Pin|LED_RED_Pin|LED_YELLOW_Pin|LED_GREEN_Pin
                           |EN2_Pin|EN3_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
@@ -213,9 +212,9 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(Button1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : DOT_Pin LED_RED_Pin EN0_Pin EN1_Pin
+  /*Configure GPIO pins : DOT_Pin LED_RED_Pin LED_YELLOW_Pin LED_GREEN_Pin
                            EN2_Pin EN3_Pin */
-  GPIO_InitStruct.Pin = DOT_Pin|LED_RED_Pin|EN0_Pin|EN1_Pin
+  GPIO_InitStruct.Pin = DOT_Pin|LED_RED_Pin|LED_YELLOW_Pin|LED_GREEN_Pin
                           |EN2_Pin|EN3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -236,6 +235,7 @@ static void MX_GPIO_Init(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	timerRun();
+	//getKeyInput();
 }
 /* USER CODE END 4 */
 
