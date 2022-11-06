@@ -11,17 +11,16 @@
 
 #include "button.h"
 #include "software_timer.h"
+#include "display7SEG.h"
 #include "main.h"
 
-#define INIT 		1
-#define AUTO_RED 	2
-#define AUTO_GREEN	3
-#define AUTO_YELLOW	4
+#include "fsm_manual.h"
+#include "fsm_automatic.h"
 
-#define MAN_RED 	12
-#define MAN_GREEN	12
-#define MAN_YELLOW 	12
+#define INIT 		6
 
+extern int timeOut;
+extern int SevenSEGCounter;
 extern int status;
 
 #endif /* INC_GLOBAL_H_ */

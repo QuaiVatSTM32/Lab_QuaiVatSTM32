@@ -7,7 +7,33 @@
 
 #include "fsm_manual.h"
 
-
-void fsm_manual_run(){
-
+void fsm_simple_buttons_run (){
+	// TODO
+	if(isButton0Pressed() == 1){
+		if(timeOut == 1) {
+			SevenSEGCounter = INIT;
+			timeOut = 0;
+		}
+		else {
+			SevenSEGCounter = 0;
+			timeOut = 1;
+		}
+		setTimer1(2000);
+		}
+	if(isButton1Pressed() == 1){
+		SevenSEGCounter++;
+		if(SevenSEGCounter >= 10) SevenSEGCounter = 0;
+		setTimer1(2000);
+	}
+	if(isButton2Pressed() == 1){
+		if(timeOut == 1) {
+			SevenSEGCounter = INIT;
+			timeOut = 0;
+		}
+		else{
+			SevenSEGCounter--;
+			if(SevenSEGCounter < 0) SevenSEGCounter = 9;
+		}
+		setTimer1(2000);
+	}
 }

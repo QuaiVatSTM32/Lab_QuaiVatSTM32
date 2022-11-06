@@ -1,0 +1,2 @@
+../Core/Src/display7SEG.c:10:6:Led_Status	16	static
+../Core/Src/display7SEG.c:20:6:display7SEG	336	static
