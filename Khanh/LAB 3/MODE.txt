@@ -1,0 +1,92 @@
+			//
+				// MODE 1
+						if(is_button_pressed(1)==1){
+
+							HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
+							HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
+							HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
+
+							HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, RESET);
+							HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
+							HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
+
+							duration_red = 50;
+							setTimer1(duration_red);
+							if(is_button_pressed(2)==1){
+								setTimer1(duration_red++);
+							}
+							if(is_button_pressed(3)==1){
+								setTimer1(duration_red);
+								if(duration_red != (duration_green + duration_yellow)){
+									duration_red = 500;
+									setTimer1(duration_red);
+								}
+
+							}
+							//MODE 2
+
+							if(is_button_pressed(1)==1){
+								HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+								HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
+								HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
+
+								HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
+								HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
+								HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, RESET);
+
+								duration_yellow = 50;
+								setTimer1(duration_yellow);
+								setTimer2(duration_yellow);
+
+								if(is_button_pressed(2)==1){
+									setTimer1(duration_yellow++);
+									setTimer2(duration_yellow++);
+
+								}
+								if(is_button_pressed(3)==1){
+									setTimer1(duration_yellow);
+									setTimer2(duration_yellow);
+									if(duration_red != (duration_green + duration_yellow)){
+										duration_yellow = 200;
+										setTimer1(duration_yellow);
+										setTimer2(duration_yellow);
+
+									}
+
+								}
+								//MODE 3
+								if(is_button_pressed(1)==1){
+									HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
+									HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
+									HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
+
+									HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
+									HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, RESET);
+									HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
+
+									duration_green = 50;
+									setTimer1(duration_green);
+									setTimer2(duration_green);
+
+									if(is_button_pressed(2)==1){
+										setTimer1(duration_green++);
+										setTimer2(duration_green++);
+
+									}
+									if(is_button_pressed(3)==1){
+										setTimer1(duration_green);
+										if(duration_red != (duration_green + duration_yellow)){
+											duration_green = 300;
+											setTimer1(duration_green);
+											setTimer2(duration_green);
+										}
+
+									}
+
+								}
+
+							}
+						}
+		//
+
+		
