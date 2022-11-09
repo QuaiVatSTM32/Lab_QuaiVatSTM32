@@ -1,0 +1,15 @@
+/*
+ * updateClockBuffer.h
+ *
+ *  Created on: Nov 3, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_UPDATECLOCKBUFFER_H_
+#define INC_UPDATECLOCKBUFFER_H_
+
+
+void updateClockBuffer (){
+
+}
+#endif /* INC_UPDATECLOCKBUFFER_H_ */
