@@ -1,6 +1,5 @@
 "./Core/Src/4led_trafficlight.o"
 "./Core/Src/7SEG_display.o"
-"./Core/Src/fsm_1mode.o"
 "./Core/Src/fsm_4mode.o"
 "./Core/Src/global.o"
 "./Core/Src/input_processing.o"

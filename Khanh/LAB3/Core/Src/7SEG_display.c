@@ -112,3 +112,125 @@ void LED_7SEG(int status){
 			break;
 	}
 }
+void clearEnBuffer(){
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
+	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
+}
+void EnBuffer(int n){
+	switch(n){
+	case 0:
+		clearEnBuffer();
+		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
+		break;
+	case 1:
+		clearEnBuffer();
+		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
+		break;
+	case 2:
+		clearEnBuffer();
+		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET);
+		break;
+	case 3:
+		clearEnBuffer();
+		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, RESET);
+		break;
+	}
+}
+// Display mode and time of led
+
+void Display_7SEG_mode(){
+	switch(led){
+	case INIT_1:
+		EnBuffer(0);
+		LED_7SEG(0);
+		setTimer(50, 3);
+		led = 1;
+		break;
+	case 0: //EN0 - 0
+		EnBuffer(0);
+		LED_7SEG(0);
+		if(timer_flag[3]==1){
+			led = 1;
+			setTimer(50, 3);
+		}
+		break;
+	case 1: //EN1- Display mode
+		EnBuffer(1);
+		LED_7SEG(choose_mode_run());
+		if(timer_flag[3]==1){
+			led = 2;
+			setTimer(50, 3);
+		}
+		break;
+	case 2: //EN2 - 0
+		EnBuffer(2);
+		LED_7SEG(0);
+		if(timer_flag[3]==1){
+			led = 3;
+			setTimer(50, 3);
+		}
+		break;
+	case 3: //EN3 - Display time of led
+		EnBuffer(3);
+		LED_7SEG(choose_duration_run());
+		if(timer_flag[3]==1){
+			led = 0;
+			setTimer(50, 3);
+		}
+		break;
+	default:
+		break;
+	}
+}
+
+//Display time in auto mode
+void Display_7SEG_Timer(){
+	switch(led_1){
+	case INIT_1:
+		EnBuffer(0);
+		LED_7SEG(0);
+		setTimer(30, 2);
+		led_1 = 0;
+		break;
+	case 0: //EN0 - 0
+		EnBuffer(0);
+		LED_7SEG(0);
+		if(timer_flag[2]==1){
+			led_1 = 1;
+			setTimer(30, 2);
+		}
+		break;
+	case 1: //EN1 - Display time of led => choose duration
+		EnBuffer(1);
+		LED_7SEG(choose_duration_run());
+		if(timer_flag[2]==1){
+			led_1 = 2;
+			setTimer(30, 2);
+		}
+		break;
+	case 2: //EN2 - 0
+		EnBuffer(2);
+		LED_7SEG(0);
+		if(timer_flag[2]==1){
+			led_1 = 3;
+			setTimer(30, 2);
+		}
+		break;
+	case 3: //EN3 -Display time of led_1 => choose duration_1
+		EnBuffer(3);
+		LED_7SEG(choose_duration_run_1());
+		if(timer_flag[2]==1){
+			led_1 = 0;
+			setTimer(30, 2);
+		}
+		break;
+	default:
+		break;
+	}
+
+	}
+
+
+

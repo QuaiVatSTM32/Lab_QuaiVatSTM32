@@ -10,10 +10,13 @@
 #include "main.h"
 #include "software_timer.h"
 #include "global.h"
+#include "7SEG_display.h"
+#include "fsm_4mode.h"
 
 void LedRedAll();
 void LedGreenAll();
 void LedYellowAll();
+
 
 void clearAll();
 

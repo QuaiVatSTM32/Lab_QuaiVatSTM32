@@ -7,7 +7,6 @@
 C_SRCS += \
 ../Core/Src/4led_trafficlight.c \
 ../Core/Src/7SEG_display.c \
-../Core/Src/fsm_1mode.c \
 ../Core/Src/fsm_4mode.c \
 ../Core/Src/global.c \
 ../Core/Src/input_processing.c \
@@ -24,7 +23,6 @@ C_SRCS += \
 OBJS += \
 ./Core/Src/4led_trafficlight.o \
 ./Core/Src/7SEG_display.o \
-./Core/Src/fsm_1mode.o \
 ./Core/Src/fsm_4mode.o \
 ./Core/Src/global.o \
 ./Core/Src/input_processing.o \
@@ -41,7 +39,6 @@ OBJS += \
 C_DEPS += \
 ./Core/Src/4led_trafficlight.d \
 ./Core/Src/7SEG_display.d \
-./Core/Src/fsm_1mode.d \
 ./Core/Src/fsm_4mode.d \
 ./Core/Src/global.d \
 ./Core/Src/input_processing.d \

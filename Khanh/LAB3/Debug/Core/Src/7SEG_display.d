@@ -23,7 +23,11 @@ Core/Src/7SEG_display.o: ../Core/Src/7SEG_display.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
+ ../Core/Inc/global.h ../Core/Inc/software_timer.h \
+ ../Core/Inc/input_processing.h ../Core/Inc/fsm_4mode.h \
+ ../Core/Inc/input_reading.h ../Core/Inc/7SEG_display.h \
+ ../Core/Inc/4led_trafficlight.h
 
 ../Core/Inc/7SEG_display.h:
 
@@ -76,3 +80,17 @@ Core/Src/7SEG_display.o: ../Core/Src/7SEG_display.c \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h:
 
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h:
+
+../Core/Inc/global.h:
+
+../Core/Inc/software_timer.h:
+
+../Core/Inc/input_processing.h:
+
+../Core/Inc/fsm_4mode.h:
+
+../Core/Inc/input_reading.h:
+
+../Core/Inc/7SEG_display.h:
+
+../Core/Inc/4led_trafficlight.h:

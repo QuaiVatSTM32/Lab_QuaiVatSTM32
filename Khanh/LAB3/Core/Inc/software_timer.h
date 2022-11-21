@@ -9,18 +9,11 @@
 #define INC_SOFTWARE_TIMER_H_
 
 #include "main.h"
-extern int timer1_flag;
-extern int timer2_flag;
-extern int timer3_flag;
 
-void setTimer1(int duration);
-void timerRun1();
+extern int timer_flag[4];
 
-void setTimer2(int duration);
-void timerRun2();
-
-void setTimer3(int duration);
-void timerRun3();
+void setTimer(int duration, int T_index);
+void timerRun();
 
 
 #endif /* INC_SOFTWARE_TIMER_H_ */

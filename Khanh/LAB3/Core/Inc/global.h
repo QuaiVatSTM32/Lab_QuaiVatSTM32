@@ -12,28 +12,38 @@
 #include "input_processing.h"
 #include "main.h"
 
-#define INIT			1
-#define AUTO_RED		2
-#define AUTO_GREEN		3
-#define AUTO_YELLOW		4
+#define INIT			22
+#define AUTO_RED		23
+#define AUTO_GREEN		24
+#define AUTO_YELLOW		25
+#define INIT_1			33
 
-#define MODE_2			11
-#define MODE_3			12
-#define MODE_4			13
-#define MODE_1			14
 
-extern int duration_red;
-extern int duration_yellow;
-extern int duration_green;
+#define NUM_OF_MODE		4
 
-extern int duration_red_1;
-extern int duration_yellow_1;
-extern int duration_green_1;
+#define NO_OF_LED		3
+
+extern int duration[NO_OF_LED];
+extern int duration_1[NO_OF_LED];
+extern int mode[NUM_OF_MODE];
+
 
 extern int status;
 extern int status_1;
 extern int status_2;
 
-extern int total;
+extern int led;
+extern int led_1;
+extern int led_2;
+extern int led_3;
+
+extern int choose_mode;
+extern int choose_duration;
+extern int choose_duration_1;
+
+int choose_mode_run();
+int choose_duration_run();
+int choose_duration_run_1();
+
 
 #endif /* INC_GLOBAL_H_ */

@@ -1,1 +1,5 @@
 7SEG_display.c:11:6:LED_7SEG	16	static
+7SEG_display.c:115:6:clearEnBuffer	8	static
+7SEG_display.c:121:6:EnBuffer	16	static
+7SEG_display.c:143:6:Display_7SEG_mode	8	static
+7SEG_display.c:189:6:Display_7SEG_Timer	8	static

@@ -25,7 +25,9 @@ Core/Src/4led_trafficlight.o: ../Core/Src/4led_trafficlight.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Core/Inc/software_timer.h ../Core/Inc/global.h \
- ../Core/Inc/input_processing.h
+ ../Core/Inc/input_processing.h ../Core/Inc/7SEG_display.h \
+ ../Core/Inc/fsm_4mode.h ../Core/Inc/input_reading.h \
+ ../Core/Inc/4led_trafficlight.h
 
 ../Core/Inc/4led_trafficlight.h:
 
@@ -84,3 +86,11 @@ Core/Src/4led_trafficlight.o: ../Core/Src/4led_trafficlight.c \
 ../Core/Inc/global.h:
 
 ../Core/Inc/input_processing.h:
+
+../Core/Inc/7SEG_display.h:
+
+../Core/Inc/fsm_4mode.h:
+
+../Core/Inc/input_reading.h:
+
+../Core/Inc/4led_trafficlight.h:

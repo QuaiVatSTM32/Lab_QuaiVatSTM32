@@ -21,7 +21,6 @@
 #include "main.h"
 #include "software_timer.h"
 #include "fsm_4mode.h"
-#include "fsm_1mode.h"
 #include  "input_processing.h"
 #include "input_reading.h"
 #include "global.h"
@@ -115,7 +114,8 @@ HAL_TIM_Base_Start_IT(&htim2);
   /* USER CODE BEGIN WHILE */
 status = INIT;
 status_1= INIT;
-status_2 = MODE_1;
+status_2 = 0;
+led_1 = INIT_1;
 
   while (1)
   {
