@@ -172,9 +172,9 @@ void Display_7SEG_mode(){
 			setTimer(50, 3);
 		}
 		break;
-	case 3: //EN3 - Display time of led
+	case 3: //EN3 - Display DISPLAY Choose_duration_update
 		EnBuffer(3);
-		LED_7SEG(choose_duration_run_1());
+		LED_7SEG(choose_duration_run_update());
 		if(timer_flag[3]==1){
 			led = 0;
 			setTimer(50, 3);

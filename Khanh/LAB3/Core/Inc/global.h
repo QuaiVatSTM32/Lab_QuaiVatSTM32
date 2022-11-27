@@ -25,6 +25,7 @@
 
 extern int duration[NO_OF_LED];
 extern int duration_1[NO_OF_LED];
+extern int duration_update[NO_OF_LED];
 extern int mode[NUM_OF_MODE];
 
 
@@ -40,10 +41,12 @@ extern int choose_duration_divider;
 extern int choose_mode;
 extern int choose_duration; //INIT DURATION
 extern int choose_duration_1;// SET DURATION
+extern int choose_duration_update;// UPDATE DURATION
 
 int choose_mode_run();
 int choose_duration_run();
 int choose_duration_run_1();
+int choose_duration_run_update();
 
 
 #endif /* INC_GLOBAL_H_ */

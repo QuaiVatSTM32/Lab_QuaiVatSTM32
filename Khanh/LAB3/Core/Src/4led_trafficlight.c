@@ -36,7 +36,7 @@ void fsm_mode1_run(){
 		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
 		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 
-		if(duration[0] != duration[1] + duration[2]){
+		if(duration_update[0] != duration_update[1] + duration_update[2]){
 			duration[0] = 500;
 			duration[2] = 200;
 			duration[1] = 300;
@@ -103,7 +103,7 @@ void fsm_mode1_run(){
 		HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, RESET);
 		HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
 
-		if(duration[0] != duration[1] + duration[2]){
+		if(duration_update[0] != duration_update[1] + duration_update[2]){
 			duration[0] = 500;
 			duration[2] = 200;
 			duration[1] = 300;
