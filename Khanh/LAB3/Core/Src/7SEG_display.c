@@ -7,7 +7,7 @@
 
 
 #include "7SEG_display.h"
-
+int LED_Index = 0;
 void LED_7SEG(int status){
 	switch(status){
 	case 0:
@@ -140,53 +140,66 @@ void EnBuffer(int n){
 }
 // Display mode and time of led
 
-void Display_7SEG_mode(){
-	switch(led){
-	case INIT_1:
-		EnBuffer(0);
-		LED_7SEG(0);
-		setTimer(50, 3);
-		led = 1;
-		break;
-	case 0: //EN0 - 0
-		EnBuffer(0);
-		LED_7SEG(0);
-		if(timer_flag[3]==1){
-			led = 1;
-			setTimer(50, 3);
-		}
-		break;
-	case 1: //EN1- Display mode
-		EnBuffer(1);
-		LED_7SEG(choose_mode_run());
-		if(timer_flag[3]==1){
-			led = 2;
-			setTimer(50, 3);
-		}
-		break;
-	case 2: //EN2 - DISPLAY Choose_duration_update
-		EnBuffer(2);
-		LED_7SEG(choose_duration_divider);
-		if(timer_flag[3]==1){
-			led = 3;
-			setTimer(50, 3);
-		}
-		break;
-	case 3: //EN3 - Display DISPLAY Choose_duration_update
-		EnBuffer(3);
-		LED_7SEG(choose_duration_run_update());
-		if(timer_flag[3]==1){
-			led = 0;
-			setTimer(50, 3);
-		}
-		break;
-	default:
-		break;
+void Display7SEGwithNum(int input[4]){ //INPUT 4 NUMBERS TO RUN, USING TIMER 3
+	if(timer_flag[3] == 1){
+		setTimer(25,3);
+		//TODO
+		LED_7SEG(input[LED_Index]);
+		EnBuffer(LED_Index++);
+		if(LED_Index >= 4) LED_Index = 0;
 	}
+}
+void Display_7SEG_mode(){
+	int input[4] = {0, choose_mode_run(), choose_duration_divider, choose_duration_run_update()};
+	Display7SEGwithNum(input);
+//	switch(led){
+//	case INIT_1:
+//		EnBuffer(0);
+//		LED_7SEG(0);
+//		setTimer(50, 3);
+//		led = 1;
+//		break;
+//	case 0: //EN0 - 0
+//		EnBuffer(0);
+//		LED_7SEG(0);
+//		if(timer_flag[3]==1){
+//			led = 1;
+//			setTimer(50, 3);
+//		}
+//		break;
+//	case 1: //EN1- Display mode
+//		EnBuffer(1);
+//		LED_7SEG(choose_mode_run());
+//		if(timer_flag[3]==1){
+//			led = 2;
+//			setTimer(50, 3);
+//		}
+//		break;
+//	case 2: //EN2 - DISPLAY Choose_duration_update
+//		EnBuffer(2);
+//		LED_7SEG(choose_duration_divider);
+//		if(timer_flag[3]==1){
+//			led = 3;
+//			setTimer(50, 3);
+//		}
+//		break;
+//	case 3: //EN3 - Display DISPLAY Choose_duration_update
+//		EnBuffer(3);
+//		LED_7SEG(choose_duration_run_update());
+//		if(timer_flag[3]==1){
+//			led = 0;
+//			setTimer(50, 3);
+//		}
+//		break;
+//	default:
+//		break;
+//	}
 }
 
 //Display time in auto mode
 void Display_7SEG_Timer(){
+//	int input[4] = {0, choose_duration_run(), 0 , choose_duration_run_1()};
+//	Display7SEGwithNum(input);
 	switch(led_1){
 	case INIT_1:
 		EnBuffer(0);
@@ -230,7 +243,7 @@ void Display_7SEG_Timer(){
 		break;
 	}
 
-	}
+}
 
 
 

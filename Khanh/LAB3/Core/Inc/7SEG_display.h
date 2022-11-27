@@ -15,7 +15,7 @@
 
 void LED_7SEG(int status);
 void Display_7SEG_mode();
-
+void Display7SEGwithNum(int input[4]);
 void Display_7SEG_Timer();
 void EnBuffer(int n);
 void clearEnBuffer();

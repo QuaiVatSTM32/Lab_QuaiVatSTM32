@@ -1,0 +1,246 @@
+/*
+ * 7SEG_display.c
+ *
+ *  Created on: Nov 4, 2022
+ *      Author: PC
+ */
+
+
+#include "7SEG_display.h"
+int LED_Index = 0;
+void LED_7SEG(int status){
+	switch(status){
+	case 0:
+			HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, RESET);
+			HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, RESET);
+			HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, RESET);
+			HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, RESET);
+			HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, RESET);
+			HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, RESET);
+			HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, SET);
+			break;
+
+		case 1:
+			HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, SET);
+			HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, RESET);
+			HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, RESET);
+			HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, SET);
+			HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, SET);
+			HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, SET);
+			HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, SET);
+			break;
+
+		case 2:
+			HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, RESET);
+			HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, RESET);
+			HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, SET);
+			HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, RESET);
+			HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, RESET);
+			HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, SET);
+			HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, RESET);
+			break;
+
+		case 3:
+			HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, RESET);
+			HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, RESET);
+			HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, RESET);
+			HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, RESET);
+			HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, SET);
+			HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, SET);
+			HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, RESET);
+			break;
+
+		case 4:
+			HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, SET);
+			HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, RESET);
+			HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, RESET);
+			HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, SET);
+			HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, SET);
+			HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, RESET);
+			HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, RESET);
+			break;
+		case 5:
+			HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, RESET);
+			HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, SET);
+			HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, RESET);
+			HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, RESET);
+			HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, SET);
+			HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, RESET);
+			HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, RESET);
+			break;
+
+		case 6:
+			HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, RESET);
+			HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, SET);
+			HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, RESET);
+			HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, RESET);
+			HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, RESET);
+			HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, RESET);
+			HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, RESET);
+			break;
+
+		case 7:
+			HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, RESET);
+			HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, RESET);
+			HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, RESET);
+			HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, SET);
+			HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, SET);
+			HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, SET);
+			HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, SET);
+			break;
+
+		case 8:
+			HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, RESET);
+			HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, RESET);
+			HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, RESET);
+			HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, RESET);
+			HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, RESET);
+			HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, RESET);
+			HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, RESET);
+			break;
+
+		case 9:
+			HAL_GPIO_WritePin(a_GPIO_Port, a_Pin, RESET);
+			HAL_GPIO_WritePin(b_GPIO_Port, b_Pin, RESET);
+			HAL_GPIO_WritePin(c_GPIO_Port, c_Pin, RESET);
+			HAL_GPIO_WritePin(d_GPIO_Port, d_Pin, RESET);
+			HAL_GPIO_WritePin(e_GPIO_Port, e_Pin, SET);
+			HAL_GPIO_WritePin(f_GPIO_Port, f_Pin, RESET);
+			HAL_GPIO_WritePin(g_GPIO_Port, g_Pin, RESET);
+			break;
+		default:
+			break;
+	}
+}
+void clearEnBuffer(){
+	HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, SET);
+	HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, SET);
+	HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, SET);
+	HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, SET);
+}
+void EnBuffer(int n){
+	switch(n){
+	case 0:
+		clearEnBuffer();
+		HAL_GPIO_WritePin(EN0_GPIO_Port, EN0_Pin, RESET);
+		break;
+	case 1:
+		clearEnBuffer();
+		HAL_GPIO_WritePin(EN1_GPIO_Port, EN1_Pin, RESET);
+		break;
+	case 2:
+		clearEnBuffer();
+		HAL_GPIO_WritePin(EN2_GPIO_Port, EN2_Pin, RESET);
+		break;
+	case 3:
+		clearEnBuffer();
+		HAL_GPIO_WritePin(EN3_GPIO_Port, EN3_Pin, RESET);
+		break;
+	}
+}
+// Display mode and time of led
+void Display7SEGwithNum(int input[4]){
+	if(timer_flag[3] == 1){
+		setTimer(25,3);
+		//TODO
+		LED_7SEG(input[LED_Index]);
+		EnBuffer(LED_Index++);
+		if(LED_Index >= 4) LED_Index = 0;
+	}
+}
+void Display_7SEG_mode(){
+	int input[4] = {0, choose_mode_run(), choose_duration_divider,choose_duration_run_update()};
+	Display7SEGwithNum(input);
+//	switch(led){
+//	case INIT_1:
+//		EnBuffer(0);
+//		LED_7SEG(0);
+//		setTimer(50, 3);
+//		led = 1;
+//		break;
+//	case 0: //EN0 - 0
+//		EnBuffer(0);
+//		LED_7SEG(0);
+//		if(timer_flag[3]==1){
+//			led = 1;
+//			setTimer(50, 3);
+//		}
+//		break;
+//	case 1: //EN1- Display mode
+//		EnBuffer(1);
+//		LED_7SEG(choose_mode_run());
+//		if(timer_flag[3]==1){
+//			led = 2;
+//			setTimer(50, 3);
+//		}
+//		break;
+//	case 2: //EN2 - DISPLAY Choose_duration_update
+//		EnBuffer(2);
+//		LED_7SEG(choose_duration_divider);
+//		if(timer_flag[3]==1){
+//			led = 3;
+//			setTimer(50, 3);
+//		}
+//		break;
+//	case 3: //EN3 - Display DISPLAY Choose_duration_update
+//		EnBuffer(3);
+//		LED_7SEG(choose_duration_run_update());
+//		if(timer_flag[3]==1){
+//			led = 0;
+//			setTimer(50, 3);
+//		}
+//		break;
+//	default:
+//		break;
+//	}
+}
+
+//Display time in auto mode
+void Display_7SEG_Timer(){
+	switch(led_1){
+	case INIT_1:
+		EnBuffer(0);
+		LED_7SEG(0);
+		setTimer(30, 2);
+		led_1 = 0;
+		break;
+	case 0: //EN0 - 0
+		EnBuffer(0);
+		LED_7SEG(0);
+		if(timer_flag[2]==1){
+			led_1 = 1;
+			setTimer(30, 2);
+		}
+		break;
+	case 1: //EN1 - Display time of led => choose duration
+		EnBuffer(1);
+		LED_7SEG(choose_duration_run());
+		if(timer_flag[2]==1){
+			led_1 = 2;
+			setTimer(30, 2);
+		}
+		break;
+	case 2: //EN2 - 0
+		EnBuffer(2);
+		LED_7SEG(0);
+		if(timer_flag[2]==1){
+			led_1 = 3;
+			setTimer(30, 2);
+		}
+		break;
+	case 3: //EN3 -Display time of led_1 => choose duration_1
+		EnBuffer(3);
+		LED_7SEG(choose_duration_run_1());
+		if(timer_flag[2]==1){
+			led_1 = 0;
+			setTimer(30, 2);
+		}
+		break;
+	default:
+		break;
+	}
+
+	}
+
+
+
