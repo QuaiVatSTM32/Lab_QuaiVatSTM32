@@ -1,0 +1,4 @@
+global.c:30:5:choose_mode_run	4	static
+global.c:44:5:choose_duration_run	4	static
+global.c:57:5:choose_duration_run_1	4	static
+global.c:71:5:choose_duration_run_update	4	static
