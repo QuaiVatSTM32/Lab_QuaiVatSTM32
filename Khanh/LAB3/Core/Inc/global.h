@@ -28,18 +28,18 @@ extern int duration_1[NO_OF_LED];
 extern int mode[NUM_OF_MODE];
 
 
-extern int status;
-extern int status_1;
-extern int status_2;
+extern int status; // AUTO MODE
+extern int status_1;// AUTO MODE
+extern int status_2;// 4 MODE
 
-extern int led;
+extern int led; //
 extern int led_1;
 extern int led_2;
-extern int led_3;
 
+extern int choose_duration_divider;
 extern int choose_mode;
-extern int choose_duration;
-extern int choose_duration_1;
+extern int choose_duration; //INIT DURATION
+extern int choose_duration_1;// SET DURATION
 
 int choose_mode_run();
 int choose_duration_run();

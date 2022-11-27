@@ -22,6 +22,9 @@ int total = 0;
 int choose_mode = 0;
 int choose_duration = 0;
 int choose_duration_1 = 0;
+
+int choose_duration_divider = 0;
+
 int choose_mode_run(){
 	switch(choose_mode){
 	case 2:
@@ -52,11 +55,11 @@ int choose_duration_run(){
 int choose_duration_run_1(){
 	switch(choose_duration_1){
 	case 0:
-		return duration[0]/100;
+		return duration_1[0]/100;
 	case 1:
-		return duration[1]/100;
+		return duration_1[1]/100;
 	case 2:
-		return duration[2]/100;
+		return duration_1[2]/100;
 	default:
 		return 0;
 	}

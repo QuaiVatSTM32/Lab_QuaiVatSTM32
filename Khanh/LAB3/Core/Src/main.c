@@ -21,11 +21,12 @@
 #include "main.h"
 #include "software_timer.h"
 #include "fsm_4mode.h"
-#include  "input_processing.h"
-#include "input_reading.h"
+//#include  "input_processing.h"
+//#include "input_reading.h"
 #include "global.h"
 #include "timer.h"
 #include "4led_trafficlight.h"
+#include  "button.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -121,10 +122,14 @@ led_1 = INIT_1;
   {
 
     /* USER CODE END WHILE */
-fsm_for_input_processing();
+//	fsm_for_input_processing();
 
-fsm_4mode_run();
-
+	fsm_4mode_run();
+	//if(is_button_pressed(0) == 1){
+	//	HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+	//
+	//
+	//}
 
 
     /* USER CODE BEGIN 3 */

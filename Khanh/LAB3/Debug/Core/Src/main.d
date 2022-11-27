@@ -27,9 +27,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/global.h ../Core/Inc/software_timer.h \
  ../Core/Inc/input_processing.h ../Core/Inc/input_reading.h \
  ../Core/Inc/7SEG_display.h ../Core/Inc/fsm_4mode.h \
- ../Core/Inc/4led_trafficlight.h ../Core/Inc/input_processing.h \
- ../Core/Inc/input_reading.h ../Core/Inc/global.h ../Core/Inc/timer.h \
- ../Core/Inc/4led_trafficlight.h
+ ../Core/Inc/4led_trafficlight.h ../Core/Inc/global.h ../Core/Inc/timer.h \
+ ../Core/Inc/4led_trafficlight.h ../Core/Inc/button.h
 
 ../Core/Inc/main.h:
 
@@ -101,12 +100,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/4led_trafficlight.h:
 
-../Core/Inc/input_processing.h:
-
-../Core/Inc/input_reading.h:
-
 ../Core/Inc/global.h:
 
 ../Core/Inc/timer.h:
 
 ../Core/Inc/4led_trafficlight.h:
+
+../Core/Inc/button.h:
