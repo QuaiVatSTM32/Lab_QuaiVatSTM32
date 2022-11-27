@@ -1,0 +1,18 @@
+/*
+ * global.c
+ *
+ *  Created on: Nov 5, 2022
+ *      Author: Admin
+ */
+
+#include "global.h"
+
+int ProjectCounter = 0;
+int status = INIT;
+
+void toggleLED(){
+	if(timer_flag[2] == 1){
+		setTimer2(1000);
+		HAL_GPIO_TogglePin(TOGGLE_LED_Port, TOGGLE_LED_Pin);
+	}
+}

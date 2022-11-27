@@ -1,0 +1,14 @@
+/*
+ * fsm_automatic.c
+ *
+ *  Created on: Nov 20, 2022
+ *      Author: Admin
+ */
+
+#include "fsm_automatic.h"
+
+void fsm_automatic_run(){
+	switch (status1){
+
+	}
+}

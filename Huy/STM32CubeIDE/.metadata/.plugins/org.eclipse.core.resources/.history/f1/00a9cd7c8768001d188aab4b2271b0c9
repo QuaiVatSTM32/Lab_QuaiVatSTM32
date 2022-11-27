@@ -1,0 +1,16 @@
+/*
+ * display.h
+ *
+ *  Created on: Nov 20, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_DISPLAY_H_
+#define INC_DISPLAY_H_
+
+#include "global.h"
+void toggleLED();
+void LED_display1(int led_index);
+void LED_display2(int led_index);
+void displayALL7SEG(led_buffer_update[4]);
+#endif /* INC_DISPLAY_H_ */

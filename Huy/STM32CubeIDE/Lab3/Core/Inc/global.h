@@ -1,0 +1,27 @@
+
+/*
+ * global.h
+ *
+ *  Created on: Nov 5, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+//Begin define
+
+//End define
+//Begin include
+#include "input_processing.h"
+#include "software_timer.h"
+#include "input_reading.h"
+#include "main.h"
+#include "timer.h"
+#include "fsm_automatic.h"
+#include "display.h"
+//End include
+extern int LED_RED_init, LED_YELLOW_init, LED_GREEN_init;
+extern int TRAFFIC_MODE;
+void toggleLED();
+void setInit();
+#endif /* INC_GLOBAL_H_ */

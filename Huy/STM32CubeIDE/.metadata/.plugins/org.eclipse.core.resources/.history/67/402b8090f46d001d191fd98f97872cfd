@@ -1,0 +1,19 @@
+/*
+ * global.c
+ *
+ *  Created on: Nov 5, 2022
+ *      Author: Admin
+ */
+
+#include "global.h"
+
+int LED_RED_init = 5, LED_YELLOW_init = 2, LED_GREEN_init = 4;
+
+int mode = 1;
+
+void setInit(){
+	  //SET INIT TIMERS
+	  setTimer(1000,0);		//TIMER RUN EVERY SECOND
+	  setTimer(250, 1);		//TIMER FOR FREQ OF 7SEG
+	  setTimer(1000,3);		//TIMER FOR TOGGLE_LED
+}

@@ -1,0 +1,28 @@
+
+/*
+ * global.h
+ *
+ *  Created on: Nov 5, 2022
+ *      Author: Admin
+ */
+
+#ifndef INC_GLOBAL_H_
+#define INC_GLOBAL_H_
+//Begin define
+#define INIT 			0
+#define AUTO_RED 		1
+#define AUTO_YELLOW		2
+#define AUTO_GREEN		3
+
+//End define
+//Begin include
+#include "input_processing.h"
+#include "software_timer.h"
+#include "input_reading.h"
+#include "main.h"
+#include "timer.h"
+//End include
+extern int ProjectCounter;
+extern int status1, status2;
+void toggleLED();
+#endif /* INC_GLOBAL_H_ */
