@@ -1,5 +1,6 @@
-../Core/Src/4led_trafficlight.c:10:6:LedRedAll	8	static
-../Core/Src/4led_trafficlight.c:15:6:LedGreenAll	8	static
-../Core/Src/4led_trafficlight.c:19:6:LedYellowAll	8	static
-../Core/Src/4led_trafficlight.c:23:6:clearAll	8	static
-../Core/Src/4led_trafficlight.c:32:6:fsm_mode1_run	8	static
+4led_trafficlight.c:10:6:LedRedAll	8	static
+4led_trafficlight.c:18:6:LedGreenAll	8	static
+4led_trafficlight.c:25:6:LedYellowAll	8	static
+4led_trafficlight.c:32:6:clearAll	8	static
+4led_trafficlight.c:54:6:fsm_mode1_run	8	static
+4led_trafficlight.c:197:6:reset7LED	8	static

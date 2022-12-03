@@ -8,17 +8,26 @@
 #include "4led_trafficlight.h"
 
 void LedRedAll(){
-	HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
-	HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, RESET);
+	if(timer_flag[1]==1){
+		HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
+		HAL_GPIO_TogglePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin);
+		setTimer(50, 1);
+	}
 }
 
 void LedGreenAll(){
-	HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
-	HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, RESET);
+	if(timer_flag[1]==1){
+		HAL_GPIO_TogglePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin);
+		HAL_GPIO_TogglePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin);
+		setTimer(50, 1);
+	}
 }
 void LedYellowAll(){
-	HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
-	HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, RESET);
+	if(timer_flag[1]==1){
+		HAL_GPIO_TogglePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin);
+		HAL_GPIO_TogglePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin);
+		setTimer(50, 1);
+	}
 }
 void clearAll(){
 	HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
@@ -28,8 +37,36 @@ void clearAll(){
 	HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 	HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
 }
-//NORMAL MODE
+
+/*
+
+NORMAL MODE
+
+
+USING STATUS - LED
+USING STATUS_1 - LED_1
+
+*/
+
+//USING TIMER2 FOR COUNTDOWN
+int countdownled = 0;
+int countdownled_1 = 0;
 void fsm_mode1_run(){
+
+
+	DisplayNumAutoMode[0] = countdownled/10;
+	DisplayNumAutoMode[1] = countdownled%10;
+
+	DisplayNumAutoMode[2] = countdownled_1/10;
+	DisplayNumAutoMode[3] = countdownled_1%10;
+
+
+	if(timer_flag[2] == 1){
+		setTimer(100, 2);
+		countdownled--;
+		countdownled_1--;
+	}
+
 	switch(status){
 	case INIT:
 		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
@@ -41,56 +78,56 @@ void fsm_mode1_run(){
 			duration[2] = 200;
 			duration[1] = 300;
 		}
-		led_1 = INIT_1;
-		status = AUTO_RED;
-		Display_7SEG_Timer();
-		setTimer(duration[0], 0);
+//
+		if(countdownled<=0){
+			status = AUTO_RED;
+			countdownled = duration[0]/100;
+		}
+
 		break;
 	case AUTO_RED:
 		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, RESET);
 		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
 		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 
-		choose_duration = 0;
-
-		if(timer_flag[2]==1){
-			Display_7SEG_Timer();
-		}
-		if(timer_flag[0] == 1){
+//
+		Display7SEGwithNum(DisplayNumAutoMode);
+		if(countdownled<=0){
 			status = AUTO_GREEN;
-			setTimer(duration[1], 0);
+			countdownled = duration[1]/100;
 		}
+
+
 		break;
 	case AUTO_GREEN:
 		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, RESET);
 		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 
-		choose_duration = 1;
 
-		if(timer_flag[0] == 1){
+
+		Display7SEGwithNum(DisplayNumAutoMode);
+		if(countdownled<=0){
 			status = AUTO_YELLOW;
-			setTimer(duration[2], 0);
+			countdownled = duration[2]/100;
 		}
-		if(timer_flag[2]==1){
-			Display_7SEG_Timer();
-		}
+
+
+
 		break;
 	case AUTO_YELLOW:
 		HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, SET);
 		HAL_GPIO_WritePin(LED_GREEN_GPIO_Port, LED_GREEN_Pin, SET);
 		HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, RESET);
 
-		choose_duration = 2;
 
-		if(timer_flag[0] == 1){
-			setTimer(duration[0], 0);
+		Display7SEGwithNum(DisplayNumAutoMode);
+		if(countdownled<=0){
 			status = AUTO_RED;
+			countdownled = duration[0]/100;
 		}
-		if(timer_flag[2]==1){
-			led_2 = 0;
-			Display_7SEG_Timer();
-		}
+
+
 		break;
 	default:
 		break;
@@ -108,20 +145,24 @@ void fsm_mode1_run(){
 			duration[2] = 200;
 			duration[1] = 300;
 		}
-		choose_duration_1 = 1;
+
 		status_1 = AUTO_GREEN;
-		setTimer(duration[1], 1);
+
+		if(countdownled_1<=0){
+			status_1 = AUTO_GREEN;
+			countdownled_1 = duration[1]/100;
+		}
+
+
 		break;
 	case AUTO_GREEN:
 		HAL_GPIO_WritePin(LED_RED_1_GPIO_Port, LED_RED_1_Pin, SET);
 		HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, RESET);
 		HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
 
-		choose_duration_1 = 1;
-
-		if(timer_flag[1] == 1){
+		if(countdownled_1<=0){
 			status_1 = AUTO_YELLOW;
-			setTimer(duration[2], 1);
+			countdownled_1 = duration[2]/100;
 		}
 
 		break;
@@ -130,11 +171,10 @@ void fsm_mode1_run(){
 		HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
 		HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, RESET);
 
-		choose_duration_1 = 2;
 
-		if(timer_flag[1] == 1){
+		if(countdownled_1<=0){
 			status_1 = AUTO_RED;
-			setTimer(duration[0], 1);
+			countdownled_1 = duration[0]/100;
 		}
 
 		break;
@@ -143,16 +183,22 @@ void fsm_mode1_run(){
 		HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
 		HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
 
-		choose_duration_1 = 0;
 
-		if(timer_flag[1] == 1){
-			setTimer(duration[1], 1);
+		if(countdownled_1<=0){
 			status_1 = AUTO_GREEN;
+			countdownled_1 = duration[1]/100;
 		}
-
 		break;
 	default:
 		break;
 	}
+
+}
+void reset7LED(){
+
+	clearEnBuffer();
+	clearAll();
+	countdownled = 0;
+	countdownled_1 = 0;
 
 }

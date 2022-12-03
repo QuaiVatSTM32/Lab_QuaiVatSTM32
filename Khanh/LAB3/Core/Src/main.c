@@ -116,20 +116,23 @@ HAL_TIM_Base_Start_IT(&htim2);
 status = INIT;
 status_1= INIT;
 status_2 = 0;
-led_1 = INIT_1;
-setTimer(25, 3);
+setTimer(100,2 );
+setTimer(25,3);
+setTimer(50,1);
   while (1)
   {
 
     /* USER CODE END WHILE */
 //	fsm_for_input_processing();
 
-	  fsm_4mode_run();
+	fsm_4mode_run();
 	//if(is_button_pressed(0) == 1){
 	//	HAL_GPIO_TogglePin(LED_RED_GPIO_Port, LED_RED_Pin);
 	//
 	//
 	//}
+
+
 
     /* USER CODE BEGIN 3 */
   }
