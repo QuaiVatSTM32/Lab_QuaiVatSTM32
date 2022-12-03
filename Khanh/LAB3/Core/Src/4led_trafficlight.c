@@ -36,6 +36,12 @@ void clearAll(){
 	HAL_GPIO_WritePin(LED_GREEN_1_GPIO_Port, LED_GREEN_1_Pin, SET);
 	HAL_GPIO_WritePin(LED_YELLOW_GPIO_Port, LED_YELLOW_Pin, SET);
 	HAL_GPIO_WritePin(LED_YELLOW_1_GPIO_Port, LED_YELLOW_1_Pin, SET);
+	countdownled = 0;
+	countdownled_1 = 0;
+	status = INIT;
+	status_1 = INIT;
+	status_2 = INIT;
+	resetIndex7LED();
 }
 
 /*
@@ -194,11 +200,4 @@ void fsm_mode1_run(){
 	}
 
 }
-void reset7LED(){
 
-	clearEnBuffer();
-	clearAll();
-	countdownled = 0;
-	countdownled_1 = 0;
-
-}

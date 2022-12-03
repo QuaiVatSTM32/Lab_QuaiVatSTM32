@@ -151,7 +151,9 @@ void Display7SEGwithNum(int input[4]){ //INPUT 4 NUMBERS TO RUN, USING TIMER 3
 
 void resetIndex7LED(){
 
-
+	LED_Index = 0;
+	int ledbufferReset[4] = {0,0,0,0};
+	Display7SEGwithNum(ledbufferReset);
 
 }
 

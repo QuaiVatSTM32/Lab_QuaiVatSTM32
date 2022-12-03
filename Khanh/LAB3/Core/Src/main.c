@@ -123,7 +123,7 @@ setTimer(50,1);
   {
 
     /* USER CODE END WHILE */
-//	fsm_for_input_processing();
+	fsm_for_input_processing();
 
 	fsm_4mode_run();
 	//if(is_button_pressed(0) == 1){

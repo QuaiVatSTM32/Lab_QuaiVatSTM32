@@ -21,7 +21,7 @@ void fsm_4mode_run(){
 
 		if(is_button_pressed(0)==1){
 			clearAll();
-
+			resetIndex7LED();
 			DisplayNumAutoMode[0] = 0;
 			DisplayNumAutoMode[1] = 2;
 			DisplayNumAutoMode[2] = (duration_update[0]/100)/10;
@@ -55,7 +55,8 @@ void fsm_4mode_run(){
 		}
 		if(is_button_pressed(0)==1){
 			clearAll();
-			clearEnBuffer();
+			resetIndex7LED();
+
 			DisplayNumAutoMode[0] = 0;
 			DisplayNumAutoMode[1] = 3;
 			DisplayNumAutoMode[2] = 0;
@@ -89,6 +90,7 @@ void fsm_4mode_run(){
 		}
 		if(is_button_pressed(0)==1){
 			clearAll();
+			resetIndex7LED();
 			DisplayNumAutoMode[0] = 0;
 			DisplayNumAutoMode[1] = 4;
 			DisplayNumAutoMode[2] = 0;
@@ -129,7 +131,8 @@ void fsm_4mode_run(){
 		}
 		if(is_button_pressed(0)==1){
 			clearAll();
-			status_2 = 1;
+			resetIndex7LED();
+			status_2 = 0;
 
 		}
 		break;
