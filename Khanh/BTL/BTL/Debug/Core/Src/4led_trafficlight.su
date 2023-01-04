@@ -1,0 +1,11 @@
+4led_trafficlight.c:12:6:LedRedAll	8	static
+4led_trafficlight.c:17:6:LedGreenAll	8	static
+4led_trafficlight.c:21:6:LedYellowAll	8	static
+4led_trafficlight.c:26:6:clearAll	8	static
+4led_trafficlight.c:35:6:Red	8	static
+4led_trafficlight.c:38:6:Red_1	8	static
+4led_trafficlight.c:42:6:Green	8	static
+4led_trafficlight.c:45:6:Green_1	8	static
+4led_trafficlight.c:49:6:Yellow	8	static
+4led_trafficlight.c:52:6:Yellow_1	8	static
+4led_trafficlight.c:55:6:fsm_mode1_run	8	static
