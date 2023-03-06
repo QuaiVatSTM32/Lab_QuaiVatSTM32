@@ -2,3 +2,4 @@
 ../Core/Src/display7SEG.c:23:6:display7SEG	336	static
 ../Core/Src/display7SEG.c:83:6:update7SEG	16	static
 ../Core/Src/display7SEG.c:122:6:updateSEGBuffer	24	static
+../Core/Src/display7SEG.c:129:6:reset7SEG	24	static

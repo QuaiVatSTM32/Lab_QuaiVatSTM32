@@ -9,7 +9,7 @@
 
 void fsm_simple_buttons_run (){
 	// TODO
-	if(isButton0Pressed() == 1){
+	if(isButtonPressed(0) == 1){
 		if(timeOut == 1) {
 			SevenSEGCounter = INIT;
 			timeOut = 0;
@@ -20,12 +20,12 @@ void fsm_simple_buttons_run (){
 		}
 		setTimer1(10000);
 	}
-	if(isButton1Pressed() == 1){
+	if(isButtonPressed(1) == 1){
 		SevenSEGCounter++;
 		if(SevenSEGCounter >= 10) SevenSEGCounter = 0;
 		setTimer1(10000);
 	}
-	if(isButton2Pressed() == 1){
+	if(isButtonPressed(2) == 1){
 		if(timeOut == 1) {
 			SevenSEGCounter = INIT;
 			timeOut = 0;

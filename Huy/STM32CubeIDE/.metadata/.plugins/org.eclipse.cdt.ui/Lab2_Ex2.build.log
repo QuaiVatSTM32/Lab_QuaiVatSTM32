@@ -1,4 +1,4 @@
-21:30:03 **** Build of configuration Release for project Lab2_Ex2 ****
+09:53:20 **** Build of configuration Release for project Lab2_Ex2 ****
 make -j12 all 
 arm-none-eabi-size   Lab2_Ex2.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size   Lab2_Ex2.elf
 Finished building: default.size.stdout
  
 
-21:30:03 Build Finished. 0 errors, 0 warnings. (took 224ms)
+09:53:20 Build Finished. 0 errors, 0 warnings. (took 160ms)
 

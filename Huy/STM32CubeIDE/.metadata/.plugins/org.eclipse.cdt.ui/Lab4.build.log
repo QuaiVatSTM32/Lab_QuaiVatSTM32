@@ -1,0 +1,52 @@
+09:53:21 **** Build of configuration Debug for project Lab4 ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/scheduler.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/scheduler.d" -MT"Core/Src/scheduler.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/scheduler.o"
+../Core/Src/scheduler.c:14:1: warning: data definition has no type or storage class
+   14 | SCH_Go_To_Sleep();
+      | ^~~~~~~~~~~~~~~
+../Core/Src/scheduler.c:14:1: warning: type defaults to 'int' in declaration of 'SCH_Go_To_Sleep' [-Wimplicit-int]
+../Core/Src/scheduler.c:50:15: error: conflicting types for 'SCH_Add_Task'
+   50 | unsigned char SCH_Add_Task( void (* pFunction) () , unsigned int DELAY, unsigned int PERIOD){
+      |               ^~~~~~~~~~~~
+In file included from ../Core/Src/scheduler.c:7:
+../Core/Inc/scheduler.h:26:6: note: previous declaration of 'SCH_Add_Task' was here
+   26 | void SCH_Add_Task(void      (*pFunction)(),
+      |      ^~~~~~~~~~~~
+../Core/Src/scheduler.c: In function 'SCH_Add_Task':
+../Core/Src/scheduler.c:61:18: error: 'ERROR_SCH_TOO_MANY_TASKS' undeclared (first use in this function)
+   61 |   Error_code_G = ERROR_SCH_TOO_MANY_TASKS;
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/scheduler.c:61:18: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/scheduler.c: In function 'SCH_Dispatch_Tasks':
+../Core/Src/scheduler.c:82:41: warning: implicit declaration of function 'SCH_Delete_Task' [-Wimplicit-function-declaration]
+   82 |    if ( SCH_tasks_G[Index].Period == 0) SCH_Delete_Task( Index ) ;
+      |                                         ^~~~~~~~~~~~~~~
+../Core/Src/scheduler.c: At top level:
+../Core/Src/scheduler.c:91:37: error: unknown type name 'tByte'
+   91 | unsigned char SCH_Delete_Task(const tByte TASK_INDEX){
+      |                                     ^~~~~
+../Core/Src/scheduler.c:91:15: error: conflicting types for 'SCH_Delete_Task'
+   91 | unsigned char SCH_Delete_Task(const tByte TASK_INDEX){
+      |               ^~~~~~~~~~~~~~~
+../Core/Src/scheduler.c:82:41: note: previous implicit declaration of 'SCH_Delete_Task' was here
+   82 |    if ( SCH_tasks_G[Index].Period == 0) SCH_Delete_Task( Index ) ;
+      |                                         ^~~~~~~~~~~~~~~
+../Core/Src/scheduler.c: In function 'SCH_Delete_Task':
+../Core/Src/scheduler.c:97:18: error: 'ERROR_SCH_CANNOT_DELETE_TASK' undeclared (first use in this function)
+   97 |   Error_code_G = ERROR_SCH_CANNOT_DELETE_TASK
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/scheduler.c:97:46: error: expected ';' before 'Return_code'
+   97 |   Error_code_G = ERROR_SCH_CANNOT_DELETE_TASK
+      |                                              ^
+      |                                              ;
+......
+  100 |   Return_code = RETURN_ERROR;
+      |   ~~~~~~~~~~~                                 
+../Core/Src/scheduler.c:102:17: error: 'RETURN_NORMAL' undeclared (first use in this function)
+  102 |   Return_code = RETURN_NORMAL;
+      |                 ^~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/scheduler.o] Error 1
+"make -j12 all" terminated with exit code 2. Build might be incomplete.
+
+09:53:22 Build Failed. 8 errors, 3 warnings. (took 1s.268ms)
+

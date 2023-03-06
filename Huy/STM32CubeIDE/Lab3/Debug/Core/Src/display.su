@@ -1,3 +1,4 @@
 ../Core/Src/display.c:9:6:toggleLED	8	static
-../Core/Src/display.c:15:6:traficDisplay1	16	static
-../Core/Src/display.c:39:6:traficDisplay2	16	static
+../Core/Src/display.c:15:6:trafficDisplay1	16	static
+../Core/Src/display.c:39:6:trafficDisplay2	16	static
+../Core/Src/display.c:63:6:trafficToggle	16	static

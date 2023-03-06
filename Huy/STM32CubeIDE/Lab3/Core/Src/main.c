@@ -93,9 +93,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  setTimer(1000,0);		//TIMER RUN EVERY SECOND
-  setTimer( 250,1);		//TIMER FOR FREQ OF 7SEG
-  setTimer(1000,3);		//TIMER FOR TOGGLE_LED
+  InitTimerSet();
   while (1)
   {
     /* USER CODE END WHILE */

@@ -16,3 +16,18 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64 -data D:\Documents\Git
 
 !ENTRY org.eclipse.cdt.core 1 0 2022-11-27 11:25:59.598
 !MESSAGE Indexed 'LAB3' (27 sources, 106 headers) in 2,3 sec: 7.527 declarations; 37.431 references; 2 unresolved inclusions; 36 syntax errors; 188 unresolved names (0,42%)
+!SESSION 2022-11-29 14:33:14.528 -----------------------------------------------
+eclipse.buildId=Version 1.10.1
+java.version=11.0.14.1
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-29 14:33:26.845
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-29 14:33:27.007
+!MESSAGE Log4j initialized with config file D:\Documents\Github\Lab1_QuaiVatSTM32\Khanh\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-29 14:33:38.146
+!MESSAGE Started RMI Server, listening on port 41337

@@ -13,29 +13,13 @@ int MAX_button = 3;
 int KeyReg0[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 int KeyReg1[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
 int KeyReg2[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
-
 int KeyReg3[3] = {NORMAL_STATE, NORMAL_STATE, NORMAL_STATE};
+
 int TimerForKeyPress = 300;
 
-int isButton0Pressed(){
-	if(button_flag[0] == 1){
-		button_flag[0] = 0;
-		return 1;
-	}
-	return 0;
-}
-
-int isButton1Pressed(){
-	if(button_flag[1] == 1){
-		button_flag[1] = 0;
-		return 1;
-	}
-	return 0;
-}
-
-int isButton2Pressed(){
-	if(button_flag[2] == 1){
-		button_flag[2] = 0;
+int isButtonPressed(int B_index){
+	if(button_flag[B_index] == 1){
+		button_flag[B_index] = 0;
 		return 1;
 	}
 	return 0;

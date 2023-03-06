@@ -20,8 +20,17 @@
 #include "fsm_automatic.h"
 #include "display.h"
 //End include
+
+//Begin extern
 extern int LED_RED_init, LED_YELLOW_init, LED_GREEN_init;
+extern int LED_RED_temp, LED_YELLOW_temp, LED_GREEN_temp;
+
 extern int TRAFFIC_MODE;
+//End extern
+
+//Begin global function
 void toggleLED();
-void setInit();
+void InitTimerSet();
+//End global function
+
 #endif /* INC_GLOBAL_H_ */

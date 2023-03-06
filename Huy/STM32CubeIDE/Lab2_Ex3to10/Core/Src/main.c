@@ -102,8 +102,8 @@ int main(void)
   	  //WHILE(1) FUNCTION
   	HAL_GPIO_WritePin(LED_RED_GPIO_Port, LED_RED_Pin, 1);
   	int hour = 15, minute = 9, second = 50;
-  	uint8_t inputA[8] = {0x18,0x3C,0x66,0x66,0x7E,0x7E,0x66,0x66};
-  	//uint8_t inputSF[8]= {0x3C,0x42,0x81,0xA5,0x81,0xA5,0x5A,0x3C};
+  	//uint8_t inputA[8] = {0x18,0x3C,0x66,0x66,0x7E,0x7E,0x66,0x66};
+  	uint8_t inputSF[8]= {0x3C,0x42,0x81,0xA5,0x81,0xA5,0x5A,0x3C};
   while (1)
   {
     /* USER CODE END WHILE */
@@ -134,9 +134,9 @@ int main(void)
 	  	  }
 	  	  	  	  //TIMER 3 CODE
 	  	  if(timer3_flag == 1){
-	  		  setTimer3(10);
+	  		  setTimer3(5);
 	  		  //TODO
-	  		  LEDMATRIX_run(inputA);
+	  		  LEDMATRIX_run(inputSF);
 	  	  }
     /* USER CODE BEGIN 3 */
   }
