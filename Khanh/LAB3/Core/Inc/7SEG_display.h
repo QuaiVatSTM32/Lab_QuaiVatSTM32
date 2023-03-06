@@ -20,4 +20,6 @@ void Display_7SEG_Timer();
 void EnBuffer(int n);
 void clearEnBuffer();
 
+void resetIndex7LED();
+
 #endif /* INC_7SEG_DISPLAY_H_ */

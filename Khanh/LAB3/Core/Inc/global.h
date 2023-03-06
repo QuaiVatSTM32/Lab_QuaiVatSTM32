@@ -36,6 +36,11 @@ extern int status_2;// 4 MODE
 extern int led; //
 extern int led_1;
 extern int led_2;
+extern int DisplayNumAutoMode[4];
+extern int DisplayNumAutoMode_1[4];
+
+extern int countdownled;
+extern int countdownled_1;
 
 extern int choose_duration_divider;
 extern int choose_mode;
@@ -43,10 +48,6 @@ extern int choose_duration; //INIT DURATION
 extern int choose_duration_1;// SET DURATION
 extern int choose_duration_update;// UPDATE DURATION
 
-int choose_mode_run();
-int choose_duration_run();
-int choose_duration_run_1();
-int choose_duration_run_update();
 
 
 #endif /* INC_GLOBAL_H_ */
